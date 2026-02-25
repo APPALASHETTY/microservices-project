@@ -17,6 +17,12 @@ pipeline {
                     sh "kubectl get svc -n webapps"
                 }
             }
+        stage('Verify Metrics Endpoint') {
+            steps {
+                sh 'kubectl get pods -n webapps'
+             }
+         }
+            
         }
     }
 }
